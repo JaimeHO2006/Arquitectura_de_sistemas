@@ -1,7 +1,7 @@
 
 ## Información
 **Nombre:** Jaime Alejandro Hernandez Orozco
-**Nombre:** 202408062
+**Carnet:** 202408062
 **Universidad:** Universidad Mesoamericana  
 **Curso:** Arquitectura de sistemas  
 **Profesor:** Jose Pablo Sanchez Estradad
