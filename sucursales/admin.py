@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Sucursal, Inventario, Movimiento
 
-# Register your models here.
+admin.site.register(Sucursal)
+admin.site.register(Inventario)
+admin.site.register(Movimiento)

@@ -93,4 +93,10 @@ python manage.py showmigrations
 ```bash
 python manage.py runserver
 ```
-El proyecto esta disponible en http://127.0.0.1:8000/ solo hay que respetar la estructura http://127.0.0.1:8000/api/aplicacion/modulo/
+El proyecto esta disponible en
+*http://127.0.0.1:8000/* 
+solo hay que respetar la estructura 
+*http://127.0.0.1:8000/api/aplicacion/modulo/*
+
+### Ejemplo
+*http://127.0.0.1:8000/api/productos/categorias/*
