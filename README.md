@@ -89,7 +89,72 @@ python manage.py migrate
 ## Comprobar que se realizaron correctamente
 python manage.py showmigrations
 ```
-### 7. Correr el servidor
+###  7. Autenticacion JWT
+Se utiliza autenticacion mediante JSON Web Tokens con `djangorestframework-simplejwt`
+
+Ahora se requiere que el usuario este autenticado para poder acceder a los end points
+
+## obtener tokens
+```http
+POST /api/token/
+```
+
+Body en formato JSON con las credenciales del super usuario usadas para entrar a *./admin/*:
+
+```json
+{
+    "username": "usuario",
+    "password": "contraseña"
+}
+```
+
+Si las credenciales son correctas, la API devuelve:
+
+```json
+{
+    "refresh": "token",
+    "access": "token"
+}
+```
+## Acceder a los endpoints protegidos
+
+Para realizar peticiones se debe enviar el Access Token utilizando autenticación Bearer:
+
+```text
+Authorization: Bearer ACCESS_TOKEN
+```
+
+Por ejemplo:
+
+```http
+GET /api/productos/productos/
+```
+
+Una petición sin un token válido devuelve:
+
+```text
+401 Unauthorized
+```
+
+### Renovar el Access Token
+
+Para obtener un nuevo Access Token se utiliza:
+
+```http
+POST /api/token/refresh/
+```
+
+Body:
+
+```json
+{
+    "refresh": "refresh_token"
+}
+```
+
+Si el Refresh Token es válido, la API devuelve un nuevo Access Token.
+
+### 8. Correr el servidor
 ```bash
 python manage.py runserver
 ```
