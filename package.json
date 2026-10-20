@@ -1,0 +1,24 @@
+{
+  "name": "arquitectura-sistemas-hw05",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "dev:frontend": "turbo run dev --filter=@arqui/frontend",
+    "dev:backend": "turbo run dev --filter=@arqui/backend",
+    "build:frontend": "turbo run build --filter=@arqui/frontend",
+    "build:backend": "turbo run build --filter=@arqui/backend",
+    "test:frontend": "turbo run test --filter=@arqui/frontend",
+    "test:backend": "turbo run test --filter=@arqui/backend"
+  },
+  "packageManager": "npm@11.17.0",
+  "devDependencies": {
+    "turbo": "^2.11.9"
+  }
+}
